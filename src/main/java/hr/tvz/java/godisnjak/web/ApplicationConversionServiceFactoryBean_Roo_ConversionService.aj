@@ -3,8 +3,13 @@
 
 package hr.tvz.java.godisnjak.web;
 
+import hr.tvz.java.godisnjak.entity.AcademicYear;
 import hr.tvz.java.godisnjak.entity.ApplicationUser;
 import hr.tvz.java.godisnjak.entity.ApplicationUserType;
+import hr.tvz.java.godisnjak.entity.City;
+import hr.tvz.java.godisnjak.entity.Course;
+import hr.tvz.java.godisnjak.entity.Place;
+import hr.tvz.java.godisnjak.entity.Student;
 import hr.tvz.java.godisnjak.web.ApplicationConversionServiceFactoryBean;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
@@ -13,6 +18,30 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     declare @type: ApplicationConversionServiceFactoryBean: @Configurable;
+    
+    public Converter<AcademicYear, String> ApplicationConversionServiceFactoryBean.getAcademicYearToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.AcademicYear, java.lang.String>() {
+            public String convert(AcademicYear academicYear) {
+                return new StringBuilder().append(academicYear.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, AcademicYear> ApplicationConversionServiceFactoryBean.getIdToAcademicYearConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, hr.tvz.java.godisnjak.entity.AcademicYear>() {
+            public hr.tvz.java.godisnjak.entity.AcademicYear convert(java.lang.Long id) {
+                return AcademicYear.findAcademicYear(id);
+            }
+        };
+    }
+    
+    public Converter<String, AcademicYear> ApplicationConversionServiceFactoryBean.getStringToAcademicYearConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, hr.tvz.java.godisnjak.entity.AcademicYear>() {
+            public hr.tvz.java.godisnjak.entity.AcademicYear convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), AcademicYear.class);
+            }
+        };
+    }
     
     public Converter<ApplicationUser, String> ApplicationConversionServiceFactoryBean.getApplicationUserToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.ApplicationUser, java.lang.String>() {
@@ -62,13 +91,124 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<City, String> ApplicationConversionServiceFactoryBean.getCityToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.City, java.lang.String>() {
+            public String convert(City city) {
+                return new StringBuilder().append(city.getName()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, City> ApplicationConversionServiceFactoryBean.getIdToCityConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, hr.tvz.java.godisnjak.entity.City>() {
+            public hr.tvz.java.godisnjak.entity.City convert(java.lang.Long id) {
+                return City.findCity(id);
+            }
+        };
+    }
+    
+    public Converter<String, City> ApplicationConversionServiceFactoryBean.getStringToCityConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, hr.tvz.java.godisnjak.entity.City>() {
+            public hr.tvz.java.godisnjak.entity.City convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), City.class);
+            }
+        };
+    }
+    
+    public Converter<Course, String> ApplicationConversionServiceFactoryBean.getCourseToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.Course, java.lang.String>() {
+            public String convert(Course course) {
+                return new StringBuilder().append(course.getName()).append(' ').append(course.getDescription()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Course> ApplicationConversionServiceFactoryBean.getIdToCourseConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, hr.tvz.java.godisnjak.entity.Course>() {
+            public hr.tvz.java.godisnjak.entity.Course convert(java.lang.Long id) {
+                return Course.findCourse(id);
+            }
+        };
+    }
+    
+    public Converter<String, Course> ApplicationConversionServiceFactoryBean.getStringToCourseConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, hr.tvz.java.godisnjak.entity.Course>() {
+            public hr.tvz.java.godisnjak.entity.Course convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Course.class);
+            }
+        };
+    }
+    
+    public Converter<Place, String> ApplicationConversionServiceFactoryBean.getPlaceToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.Place, java.lang.String>() {
+            public String convert(Place place) {
+                return new StringBuilder().append(place.getName()).append(' ').append(place.getPostalCode()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Place> ApplicationConversionServiceFactoryBean.getIdToPlaceConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, hr.tvz.java.godisnjak.entity.Place>() {
+            public hr.tvz.java.godisnjak.entity.Place convert(java.lang.Long id) {
+                return Place.findPlace(id);
+            }
+        };
+    }
+    
+    public Converter<String, Place> ApplicationConversionServiceFactoryBean.getStringToPlaceConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, hr.tvz.java.godisnjak.entity.Place>() {
+            public hr.tvz.java.godisnjak.entity.Place convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Place.class);
+            }
+        };
+    }
+    
+    public Converter<Student, String> ApplicationConversionServiceFactoryBean.getStudentToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.Student, java.lang.String>() {
+            public String convert(Student student) {
+                return new StringBuilder().append(student.getJmbag()).append(' ').append(student.getName()).append(' ').append(student.getSurname()).append(' ').append(student.getEmail()).toString();
+            }
+        };
+    }
+    
+    public Converter<Long, Student> ApplicationConversionServiceFactoryBean.getIdToStudentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Long, hr.tvz.java.godisnjak.entity.Student>() {
+            public hr.tvz.java.godisnjak.entity.Student convert(java.lang.Long id) {
+                return Student.findStudent(id);
+            }
+        };
+    }
+    
+    public Converter<String, Student> ApplicationConversionServiceFactoryBean.getStringToStudentConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, hr.tvz.java.godisnjak.entity.Student>() {
+            public hr.tvz.java.godisnjak.entity.Student convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), Student.class);
+            }
+        };
+    }
+    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(getAcademicYearToStringConverter());
+        registry.addConverter(getIdToAcademicYearConverter());
+        registry.addConverter(getStringToAcademicYearConverter());
         registry.addConverter(getApplicationUserToStringConverter());
         registry.addConverter(getIdToApplicationUserConverter());
         registry.addConverter(getStringToApplicationUserConverter());
         registry.addConverter(getApplicationUserTypeToStringConverter());
         registry.addConverter(getIdToApplicationUserTypeConverter());
         registry.addConverter(getStringToApplicationUserTypeConverter());
+        registry.addConverter(getCityToStringConverter());
+        registry.addConverter(getIdToCityConverter());
+        registry.addConverter(getStringToCityConverter());
+        registry.addConverter(getCourseToStringConverter());
+        registry.addConverter(getIdToCourseConverter());
+        registry.addConverter(getStringToCourseConverter());
+        registry.addConverter(getPlaceToStringConverter());
+        registry.addConverter(getIdToPlaceConverter());
+        registry.addConverter(getStringToPlaceConverter());
+        registry.addConverter(getStudentToStringConverter());
+        registry.addConverter(getIdToStudentConverter());
+        registry.addConverter(getStringToStudentConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_hr_tvz_java_godisnjak_entity_Student" object="${student}" path="/students" z="H6jt8ndAvfTl3IpNVhMt/SY9VlM=">
+        <field:display field="jmbag" id="s_hr_tvz_java_godisnjak_entity_Student_jmbag" object="${student}" z="w4xp3MbqRwka36NtOUFvvp0l4Og="/>
+        <field:display field="name" id="s_hr_tvz_java_godisnjak_entity_Student_name" object="${student}" z="8JdUvAWwpfVkuErvb5lsWIukUYw="/>
+        <field:display field="surname" id="s_hr_tvz_java_godisnjak_entity_Student_surname" object="${student}" z="kwFTZIhYM+IH9Mdvl6Vbk7zfzbk="/>
+        <field:display field="email" id="s_hr_tvz_java_godisnjak_entity_Student_email" object="${student}" z="jR4XRY2Np91X21QljCuOy1oqAfk="/>
+        <field:display field="address" id="s_hr_tvz_java_godisnjak_entity_Student_address" object="${student}" z="UUWDuy8twAlAh7UmpFD9Uv71q1I="/>
+        <field:display field="place" id="s_hr_tvz_java_godisnjak_entity_Student_place" object="${student}" z="sKGdt6OL0ZZVDbCrsOPVI3KIwfE="/>
+        <field:display field="courses" id="s_hr_tvz_java_godisnjak_entity_Student_courses" object="${student}" z="y3WN+I8B12c32kluzc1EGX52Ylo="/>
+    </page:show>
+</div>

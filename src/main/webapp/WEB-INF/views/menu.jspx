@@ -1,23 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:sec="http://www.springframework.org/security/tags" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" xmlns:sec="http://www.springframework.org/security/tags" id="menu" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
-    <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
-        <menu:category id="c_applicationusertype" z="ku78GDALkgZUgblZKcbeb0v9wDU=">
-            <menu:item id="i_applicationusertype_new" messageCode="global_menu_new" url="/applicationusertypes?form" z="wAVBo4WgTD91oE+DjK40sQZM38w="/>
-            <menu:item id="i_applicationusertype_list" messageCode="global_menu_list" url="/applicationusertypes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="O6/uewEtNlC9Zvv61GFizlAtLXc="/>
+        <sec:authorize access="hasAnyRole('ROLE_ADMIN')">
+            <menu:category id="c_applicationusertype" z="ku78GDALkgZUgblZKcbeb0v9wDU=">
+                <menu:item id="i_applicationusertype_new" messageCode="global_menu_new" url="/applicationusertypes?form" z="wAVBo4WgTD91oE+DjK40sQZM38w="/>
+                <menu:item id="i_applicationusertype_list" messageCode="global_menu_list" url="/applicationusertypes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="O6/uewEtNlC9Zvv61GFizlAtLXc="/>
+            </menu:category>
+            <menu:category id="c_applicationuser" z="v79aQ/QkMH7PCPKfrV5dAc2kaIs=">
+                <menu:item id="i_applicationuser_new" messageCode="global_menu_new" url="/applicationusers?form" z="my4Meg61ezcWcDO+i5f9Fl7SsfU="/>
+                <menu:item id="i_applicationuser_list" messageCode="global_menu_list" url="/applicationusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="18oGQE63MUIZ2YAKBPnDk0gNcZA="/>
+            </menu:category>
+        </sec:authorize>
+        <sec:authorize access="hasAnyRole('ROLE_USER')">
+            <menu:category id="c_applicationuser" z="v79aQ/QkMH7PCPKfrV5dAc2kaIs=">
+                <menu:item id="i_applicationuser_new" messageCode="global_menu_new" url="/applicationusers?form" z="my4Meg61ezcWcDO+i5f9Fl7SsfU="/>
+                <menu:item id="i_applicationuser_list" messageCode="global_menu_list" url="/applicationusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="18oGQE63MUIZ2YAKBPnDk0gNcZA="/>
+            </menu:category>
+        </sec:authorize>
+        <menu:category id="c_place" z="ehQx2hJboGCApd1gLkBWIirIY8o=">
+            <menu:item id="i_place_new" messageCode="global_menu_new" url="/places?form" z="oXyj2ntMWN+afa2ioyogSa2fQ9o="/>
+            <menu:item id="i_place_list" messageCode="global_menu_list" url="/places?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Izzog92S76kbaHzJ5CCwo4pO/zM="/>
         </menu:category>
-        <menu:category id="c_applicationuser" z="v79aQ/QkMH7PCPKfrV5dAc2kaIs=">
-            <menu:item id="i_applicationuser_new" messageCode="global_menu_new" url="/applicationusers?form" z="my4Meg61ezcWcDO+i5f9Fl7SsfU="/>
-            <menu:item id="i_applicationuser_list" messageCode="global_menu_list" url="/applicationusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="18oGQE63MUIZ2YAKBPnDk0gNcZA="/>
+        <menu:category id="c_city" z="4hVKAkWoLVM4Da06LymSga9Sizg=">
+            <menu:item id="i_city_new" messageCode="global_menu_new" url="/citys?form" z="dbfrmJjWGvOtF7e23trrw/vQnRE="/>
+            <menu:item id="i_city_list" messageCode="global_menu_list" url="/citys?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Yq246nbcmHRrSUSB+sOWkE5wtxQ="/>
         </menu:category>
-    </sec:authorize>
-     <sec:authorize access="hasAnyRole('ROLE_USER')">
-        <menu:category id="c_applicationuser" z="v79aQ/QkMH7PCPKfrV5dAc2kaIs=">
-            <menu:item id="i_applicationuser_new" messageCode="global_menu_new" url="/applicationusers?form" z="my4Meg61ezcWcDO+i5f9Fl7SsfU="/>
-            <menu:item id="i_applicationuser_list" messageCode="global_menu_list" url="/applicationusers?page=1&amp;size=${empty param.size ? 10 : param.size}" z="18oGQE63MUIZ2YAKBPnDk0gNcZA="/>
+        <menu:category id="c_academicyear" z="cz3MQxK3aq3YZR4MAx7uw3rhWek=">
+            <menu:item id="i_academicyear_new" messageCode="global_menu_new" url="/academicyears?form" z="tJnUQDVWUDXSjULlSwUUGBanU1Y="/>
+            <menu:item id="i_academicyear_list" messageCode="global_menu_list" url="/academicyears?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1kujwzesHteGHoa+d4g6QZFne0k="/>
         </menu:category>
-    </sec:authorize>
+        <menu:category id="c_student" z="VA/5j81jpINYUQQoxpb8LUYLpWk=">
+            <menu:item id="i_student_new" messageCode="global_menu_new" url="/students?form" z="xCEWOyB2txSvWmV9Fxwd+H7BxCM="/>
+            <menu:item id="i_student_list" messageCode="global_menu_list" url="/students?page=1&amp;size=${empty param.size ? 10 : param.size}" z="PSLnBxZ6Z7hXmOglFNorqDjA2H0="/>
+        </menu:category>
+        <menu:category id="c_course" z="xwPFa1gir7x2AC89oGWk0WgKTE0=">
+            <menu:item id="i_course_new" messageCode="global_menu_new" url="/courses?form" z="vR3sAxuatm9tFJBQbX6a5epcJ2U="/>
+            <menu:item id="i_course_list" messageCode="global_menu_list" url="/courses?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ym6LbWOetujuA2Z1C5Io6i7oW9I="/>
+        </menu:category>
     </menu:menu>
 </div>

@@ -6,5 +6,6 @@
         <field:display field="username" id="s_hr_tvz_java_godisnjak_entity_ApplicationUser_username" object="${applicationuser}" z="Sg9gnqhcrVz3l7jBv2Io/yABft4="/>
         <field:display field="userRole" id="s_hr_tvz_java_godisnjak_entity_ApplicationUser_userRole" object="${applicationuser}" z="s+AqzrUqX5g8ZHdhO5aqDGXyPTA="/>
         <field:display field="enabled" id="s_hr_tvz_java_godisnjak_entity_ApplicationUser_enabled" object="${applicationuser}" z="1xVvyyUlvYzxIe5N/CTwRgjlcOQ="/>
+        <field:display field="password" id="s_hr_tvz_java_godisnjak_entity_ApplicationUser_password" object="${applicationuser}" z="iL+YbMLOZUKe9T6VX4/aB3Hw4Dw="/>
     </page:show>
 </div>

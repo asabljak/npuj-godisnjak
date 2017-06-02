@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_hr_tvz_java_godisnjak_entity_Student" items="${students}" z="MvUh+URF3Xg/fzlRNdUupZal9W8=">
+        <table:table data="${students}" id="l_hr_tvz_java_godisnjak_entity_Student" path="/students" z="B+34auOBAJPt7JRsg7wsOq/b06A=">
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Student_jmbag" property="jmbag" z="pmXMMkrUvqfia0ygao96s5ykz9M="/>
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Student_name" property="name" z="Ygy1YzjdQbt4aC7xY0Evmsemc2A="/>
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Student_surname" property="surname" z="rr3BA4W15euj3oidilLCxM7qZkY="/>
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Student_email" property="email" z="4yNaTiPFz+Fa0lLSvWerAeI2dqw="/>
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Student_address" property="address" z="m/IATinrfcQwb0uOYGw0+Yaw8U0="/>
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Student_place" property="place" z="XnXNEvD21Z7tH+uwXZBgQNYNHY8="/>
+        </table:table>
+    </page:list>
+</div>

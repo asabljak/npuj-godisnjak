@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_hr_tvz_java_godisnjak_entity_Course" items="${courses}" z="YzIOU1bF4vmWbDqWVJUushjcL1A=">
+        <table:table data="${courses}" id="l_hr_tvz_java_godisnjak_entity_Course" path="/courses" z="Y6W3sdPJHwkCXINI1iPeaVoR+zA=">
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Course_name" property="name" z="c+u1fUJe+dJN/TUKSU7Gmv217Jg="/>
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Course_description" property="description" z="MmzThzEA8KJsLyPiPd8NrrZjaMw="/>
+            <table:column id="c_hr_tvz_java_godisnjak_entity_Course_academicYear" property="academicYear" z="uF+bmdaftKfXepeUct0DKMYR75A="/>
+        </table:table>
+    </page:list>
+</div>

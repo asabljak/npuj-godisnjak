@@ -34,3 +34,27 @@ security setup
 focus --class ~.entity.ApplicationUser
 field boolean --fieldName enabled
 // Spring Roo 1.3.2.RELEASE [rev 8387857] log closed at 2017-06-02 08:06:58
+// Spring Roo 1.3.2.RELEASE [rev 8387857] log opened at 2017-06-02 19:21:02
+entity jpa --class ~.entity.City
+field string --fieldName name --notNull 
+entity jpa --class ~.entity.Place
+field string --fieldName name --notNull 
+field number --fieldName postalCode --type int 
+field reference --type ~.entity.City --fieldName city 
+controller all --package hr.tvz.java.godisnjak.web
+entity jpa --class ~.entity.AcademicYear
+field string --fieldName name --notNull 
+field string --fieldName description
+field reference --type ~.entity.AcademicYear --fieldName academicYear
+entity jpa --class ~.entity.Student
+field string --fieldName jmbag --notNull --sizeMax 11
+field string --fieldName name --notNull 
+field string --fieldName surname --notNull 
+field string --fieldName email --notNull 
+field string --fieldName address
+field reference --type ~.entity.Place --fieldName place
+entity jpa --class ~.entity.Course
+field string --fieldName name --notNull 
+field string --fieldName description
+field reference --type ~.entity.AcademicYear --fieldName academicYear
+controller all --package hr.tvz.java.godisnjak.web

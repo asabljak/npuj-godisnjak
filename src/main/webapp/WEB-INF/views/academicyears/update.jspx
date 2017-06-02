@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_hr_tvz_java_godisnjak_entity_AcademicYear" modelAttribute="academicYear" path="/academicyears" versionField="Version" z="1B0zJEjKGlQEZvxe4TfuHYX+Urs=">
+        <field:input field="name" id="c_hr_tvz_java_godisnjak_entity_AcademicYear_name" required="true" z="8qjgX+msAa0zKoJ75utlMxK9J78="/>
+    </form:update>
+</div>
