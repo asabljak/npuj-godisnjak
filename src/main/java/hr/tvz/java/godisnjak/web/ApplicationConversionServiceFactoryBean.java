@@ -1,6 +1,8 @@
 package hr.tvz.java.godisnjak.web;
 
-import org.springframework.format.FormatterRegistry;
+import java.util.Set;
+
+import org.springframework.format.FormatterRegistrar;
 import org.springframework.format.support.FormattingConversionServiceFactoryBean;
 import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionService;
 
@@ -11,8 +13,8 @@ import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionS
 public class ApplicationConversionServiceFactoryBean extends FormattingConversionServiceFactoryBean {
 
 	@Override
-	protected void installFormatters(FormatterRegistry registry) {
-		super.installFormatters(registry);
-		// Register application converters and formatters
+	public void setFormatterRegistrars(Set<FormatterRegistrar> formatterRegistrars) {
+		// TODO Auto-generated method stub
+		super.setFormatterRegistrars(formatterRegistrars);
 	}
 }
