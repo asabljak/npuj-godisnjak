@@ -1,5 +1,6 @@
 package hr.tvz.java.godisnjak.web.api;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,35 +15,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import hr.tvz.java.godisnjak.entity.Place;
-import hr.tvz.java.godisnjak.entity.repository.PlaceRepository;
+import hr.tvz.java.godisnjak.entity.Course;
+import hr.tvz.java.godisnjak.entity.repository.CourseRepository;
 
 @RestController
-@RequestMapping("/api/places")
-public class PlaceRestController {
-
+@RequestMapping("/api/courses")
+public class CourseRestController {
+	
 	@Autowired
-	PlaceRepository repository;
+	CourseRepository repository;
 	
 	@GetMapping
-	public List<Place> getAll() {		
+	public List<Course> getAll() {
 		return repository.findAllByOrderByNameAsc();
 	}
 	
 	@GetMapping(value="/{id}")
-	public Place getById(@PathVariable("id") Long id) {
+	public Course getById(@PathVariable("id") Long id) {
 		return repository.findOne(id);
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Place create(@RequestBody Place place) {
-		return repository.save(place);
+	public Course create(@RequestBody Course course) {
+		return repository.save(course);
 	}
 	
 	@PutMapping
-	public Place update(@RequestBody Place place) {
-		return repository.save(place);
+	public Course update(@RequestBody Course course) {
+		return repository.save(course);
 	}
 	
 	 @DeleteMapping( value = "/{id}")
@@ -50,5 +51,4 @@ public class PlaceRestController {
 	 public void delete( @PathVariable( "id" ) Long id ){
 	    repository.delete(id);
 	 }
-	
 }

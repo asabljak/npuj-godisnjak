@@ -14,35 +14,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import hr.tvz.java.godisnjak.entity.Place;
-import hr.tvz.java.godisnjak.entity.repository.PlaceRepository;
+import hr.tvz.java.godisnjak.entity.Student;
+import hr.tvz.java.godisnjak.entity.repository.StudentRepository;
 
 @RestController
-@RequestMapping("/api/places")
-public class PlaceRestController {
+@RequestMapping("/api/students")
+public class StudentRestController {
 
 	@Autowired
-	PlaceRepository repository;
+	StudentRepository repository;
 	
 	@GetMapping
-	public List<Place> getAll() {		
+	public List<Student> getAll() {
 		return repository.findAllByOrderByNameAsc();
 	}
 	
 	@GetMapping(value="/{id}")
-	public Place getById(@PathVariable("id") Long id) {
+	public Student getById(@PathVariable("id") Long id) {
 		return repository.findOne(id);
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Place create(@RequestBody Place place) {
-		return repository.save(place);
+	public Student create(@RequestBody Student student) {
+		return repository.save(student);
 	}
 	
 	@PutMapping
-	public Place update(@RequestBody Place place) {
-		return repository.save(place);
+	public Student update(@RequestBody Student student) {
+		return repository.save(student);
 	}
 	
 	 @DeleteMapping( value = "/{id}")

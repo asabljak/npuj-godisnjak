@@ -1,5 +1,6 @@
 package hr.tvz.java.godisnjak.web.api;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,35 +15,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import hr.tvz.java.godisnjak.entity.Place;
-import hr.tvz.java.godisnjak.entity.repository.PlaceRepository;
+import hr.tvz.java.godisnjak.entity.AcademicYear;
+import hr.tvz.java.godisnjak.entity.repository.AcademicYearRepository;
 
 @RestController
-@RequestMapping("/api/places")
-public class PlaceRestController {
+@RequestMapping("/api/academicyears")
+public class AcademicYearRestController {
 
 	@Autowired
-	PlaceRepository repository;
+	AcademicYearRepository repository;
 	
 	@GetMapping
-	public List<Place> getAll() {		
+	public List<AcademicYear> getAll() {
+			
 		return repository.findAllByOrderByNameAsc();
 	}
 	
 	@GetMapping(value="/{id}")
-	public Place getById(@PathVariable("id") Long id) {
+	public AcademicYear getById(@PathVariable("id") Long id) {
 		return repository.findOne(id);
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Place create(@RequestBody Place place) {
-		return repository.save(place);
+	public AcademicYear create(@RequestBody AcademicYear academicYear) {
+		return repository.save(academicYear);
 	}
 	
 	@PutMapping
-	public Place update(@RequestBody Place place) {
-		return repository.save(place);
+	public AcademicYear update(@RequestBody AcademicYear academicYear) {
+		return repository.save(academicYear);
 	}
 	
 	 @DeleteMapping( value = "/{id}")
