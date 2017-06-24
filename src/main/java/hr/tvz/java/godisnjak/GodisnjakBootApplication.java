@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ImportResource;
 
-@ImportResource({"classpath:/META-INF/spring/applicationContext.xml","classpath:/META-INF/spring/applicationContext-security.xml"})
+@ImportResource({"classpath:/META-INF/spring/applicationContext.xml","classpath:/META-INF/spring/applicationContext-security.xml", "classpath:/META-INF/webmvc-config.xml"})
 @SpringBootApplication(exclude = {ErrorMvcAutoConfiguration.class})
 public class GodisnjakBootApplication extends SpringBootServletInitializer {
 
