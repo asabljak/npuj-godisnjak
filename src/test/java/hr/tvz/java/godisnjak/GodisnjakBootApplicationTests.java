@@ -1,6 +1,5 @@
 package hr.tvz.java.godisnjak;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,17 +9,13 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import hr.tvz.java.godisnjak.entity.City;
-import hr.tvz.java.godisnjak.entity.repository.CityRepository;
 
-import static org.junit.Assert.assertEquals;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-import javax.transaction.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -30,7 +25,7 @@ public class GodisnjakBootApplicationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
-		
+	
 	@Test
 	public void showStudentsAsAdmin() throws Exception{
 		this.mockMvc
@@ -40,9 +35,4 @@ public class GodisnjakBootApplicationTests {
 		.andExpect(view().name("students/list"));
 		
 	}
-	
-	
-	
-	
-
 }
