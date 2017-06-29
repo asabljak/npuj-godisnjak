@@ -55,7 +55,7 @@ public class AcademicYearController {
     @RequestMapping(produces = "text/html")
     public String list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, @RequestParam(value = "sortFieldName", required = false) String sortFieldName, @RequestParam(value = "sortOrder", required = false) String sortOrder, Model uiModel) {
         
-    	uiModel.addAttribute(repository.findAllByOrderByNameAsc());
+    	uiModel.addAttribute("academicyears", repository.findAllByOrderByNameAsc());
     	
         return "academicyears/list";
     }

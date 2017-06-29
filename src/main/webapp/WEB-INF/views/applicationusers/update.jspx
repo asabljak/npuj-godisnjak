@@ -7,6 +7,5 @@
         <!--         <field:input field="password" id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_password" required="true" z="n+7SCnkwgnOBlaYvY5399MohDnk="/> -->
         <field:select field="userRole" id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_userRole" itemValue="id" items="${applicationusertypes}" path="/applicationusertypes" z="5hMnj5tvyJkseX/rl7tCxdQfR3M="/>
         <field:checkbox field="enabled" id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_enabled" z="nToQykef2f7IZSyTzewL//aJd3Y="/>
-        <field:input field="password" id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_password" required="true" z="n+7SCnkwgnOBlaYvY5399MohDnk="/>
     </form:update>
 </div>

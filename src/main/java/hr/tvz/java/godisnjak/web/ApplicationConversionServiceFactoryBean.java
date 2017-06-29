@@ -8,8 +8,10 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.format.support.FormattingConversionServiceFactoryBean;
 import org.springframework.roo.addon.web.mvc.controller.converter.RooConversionService;
 
+import hr.tvz.java.godisnjak.entity.AcademicYear;
 import hr.tvz.java.godisnjak.entity.ApplicationUser;
 import hr.tvz.java.godisnjak.entity.ApplicationUserType;
+import hr.tvz.java.godisnjak.entity.City;
 import hr.tvz.java.godisnjak.entity.Course;
 import hr.tvz.java.godisnjak.entity.Place;
 import hr.tvz.java.godisnjak.entity.Student;
@@ -57,6 +59,41 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
             }
         };
     }
+    
+    public Converter<String, City> getStringToCity() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, hr.tvz.java.godisnjak.entity.City>() {
+            public hr.tvz.java.godisnjak.entity.City convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), City.class);
+            }
+        };
+    }
+
+    
+    public Converter<AcademicYear, String> getAcademicYearToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.AcademicYear, java.lang.String>() {
+            public String convert(AcademicYear academicYear) {
+                return new StringBuilder().append(academicYear.getName()).toString();
+            }
+        };
+    }
+
+    public Converter<String, AcademicYear> getStringToAcademicYear() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, hr.tvz.java.godisnjak.entity.AcademicYear>() {
+            public hr.tvz.java.godisnjak.entity.AcademicYear convert(String id) {
+                return getObject().convert(getObject().convert(id, Long.class), AcademicYear.class);
+            }
+        };
+    }
+
+    
+    public Converter<City, String> getCityToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.City, java.lang.String>() {
+            public String convert(City city) {
+                return new StringBuilder().append(city.getName()).toString();
+            }
+        };
+    }
+
     
     public Converter<Course, String> getCourseToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<hr.tvz.java.godisnjak.entity.Course, java.lang.String>() {
@@ -117,6 +154,10 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
         registry.addConverter(getStringToPlaceConverter());
         registry.addConverter(getStudentToStringConverter());
         registry.addConverter(getStringToStudentConverter());
+        registry.addConverter(getCityToStringConverter());
+        registry.addConverter(getStringToCity());
+        registry.addConverter(getAcademicYearToStringConverter());
+        registry.addConverter(getStringToAcademicYear());
     }
     
     public void afterPropertiesSet() {

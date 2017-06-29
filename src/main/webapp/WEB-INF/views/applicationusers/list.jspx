@@ -7,7 +7,6 @@
             <table:column id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_username" property="username" z="90KqTB8AZfopnl7RgKg7jdPBX0A="/>
             <table:column id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_userRole" property="userRole" z="odTvFHoJjEV/9AMm77T0iov1vpo="/>
             <table:column id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_enabled" property="enabled" z="z5rXEERY+AHrYjoZ1hf1i6UeRwE="/>
-            <table:column id="c_hr_tvz_java_godisnjak_entity_ApplicationUser_password" property="password" z="JAI8UUmXqkF4zyDa0Sn0i9gte3E="/>
         </table:table>
     </page:list>
 </div>
